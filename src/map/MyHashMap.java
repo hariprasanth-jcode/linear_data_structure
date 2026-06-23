@@ -56,4 +56,26 @@ public class MyHashMap {
             System.out.println("null");
         }
     }
+
+    public void removeByKey(String key) {
+        int index = getIndex(key);
+        Node temp = buckets[index];
+        Node prev=null;
+
+            while (temp != null) {
+                if (temp.key.equals(key)) {
+                    System.out.println("Removed Value : "+temp.value);
+                    if(prev==null){
+                        buckets[index] = temp.next;
+                    }else {
+                        prev.next = temp.next;
+                    }
+                    return;
+                }
+                prev=temp;
+                temp = temp.next;
+            }
+        System.out.println("Key not found");
+        }
+
 }

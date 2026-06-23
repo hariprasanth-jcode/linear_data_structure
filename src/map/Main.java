@@ -15,7 +15,7 @@ public class Main {
 
         map.display();
 
-        System.out.println("Value for apple: " + map.get("apple"));
-        System.out.println("Value for orange: " + map.get("orange"));
+        map.removeByKey("cat");
+        map.display();
     }
 }
